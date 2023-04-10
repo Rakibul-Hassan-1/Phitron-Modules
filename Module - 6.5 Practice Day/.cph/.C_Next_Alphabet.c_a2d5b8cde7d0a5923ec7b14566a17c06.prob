@@ -1,0 +1,1 @@
+{"name":"Local: C_Next_Alphabet","url":"d:\\Modules\\Module - 6.5 Practice Day\\C_Next_Alphabet.c","tests":[{"id":1681143690769,"input":"a","output":"b"},{"id":1681143901050,"input":"z","output":"a"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 6.5 Practice Day\\C_Next_Alphabet.c","group":"local","local":true}
