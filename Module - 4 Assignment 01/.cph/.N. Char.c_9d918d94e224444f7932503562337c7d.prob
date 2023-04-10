@@ -1,0 +1,1 @@
+{"name":"Local: N","url":"d:\\Modules\\Module - 4\\N. Char.c","tests":[{"id":1681009822564,"input":"a","output":"A"},{"id":1681009976641,"input":"A","output":"a"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 4\\N. Char.c","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: J","url":"d:\\Modules\\Module - 4\\J. Multiples.c","tests":[{"id":1681009425665,"input":"9 3","output":"Multiples"},{"id":1681009442509,"input":"12 5","output":"No Multiples"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 4\\J. Multiples.c","group":"local","local":true}

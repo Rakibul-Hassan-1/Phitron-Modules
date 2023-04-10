@@ -1,0 +1,1 @@
+{"name":"Local: P","url":"d:\\Modules\\Module - 4\\P. First digit !.c","tests":[{"id":1681010398408,"input":"4569","output":"EVEN"},{"id":1681010410014,"input":"3569","output":"ODD"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 4\\P. First digit !.c","group":"local","local":true}
