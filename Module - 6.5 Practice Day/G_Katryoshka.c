@@ -2,20 +2,37 @@
 
 int main()
 {
-    int eye, mouth, body, count = 0;
-    scanf("%d%d%d", &eye, &mouth, &body);
+    long long int e, m, b, res = 0;
+    scanf("%lld%lld%lld", &e, &m, &b);
 
-    if (eye == 2 && body == 1)
+    if (e < 0 && b < 0)
     {
-        count++;
+        printf("0\n");
     }
-    if (eye == 2 && mouth == 1 && body == 1)
+    else
     {
-        count++;
-    }
-    if (eye == 1 && mouth == 1 && body == 1)
-    {
-        count++;
+        long long int min = e;
+        if (m < min)
+        {
+            min = m;
+        }
+        if (b < min)
+        {
+            min = b;
+        }
+        e = e - min;
+        m = m - min;
+        b = b - min;
+        res = res + min;
+        if (e / 2 < b)
+        {
+            res = res + (e / 2);
+        }
+        else
+        {
+            res = res + b;
+        }
+        printf("%lld\n", res);
     }
 
     return 0;
