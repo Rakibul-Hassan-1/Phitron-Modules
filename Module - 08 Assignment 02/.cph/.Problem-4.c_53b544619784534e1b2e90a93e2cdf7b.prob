@@ -1,0 +1,1 @@
+{"name":"Local: Problem-4","url":"d:\\Modules\\Module - 08 Assignment 02\\Problem-4.c","tests":[{"id":1681407954692,"input":"5\n10 20 30 40 50\n1 100","output":"50 40 30 100 10 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 08 Assignment 02\\Problem-4.c","group":"local","local":true}
