@@ -1,0 +1,1 @@
+{"name":"Local: strcpy","url":"d:\\Modules\\Module - 11 String Oparetion and Frequency Array\\strcpy.c","tests":[{"id":1681875749028,"input":"ab bd","output":"abbd bd"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 11 String Oparetion and Frequency Array\\strcpy.c","group":"local","local":true}
