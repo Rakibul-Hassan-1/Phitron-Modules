@@ -14,5 +14,5 @@ int main()
         printf("%c - %d\n", i, count[i - 'a']);
     }
 
-    return 0;
+       return 0;
 }
