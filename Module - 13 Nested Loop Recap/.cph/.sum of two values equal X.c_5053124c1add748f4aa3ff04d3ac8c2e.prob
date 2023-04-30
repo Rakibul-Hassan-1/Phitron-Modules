@@ -1,0 +1,1 @@
+{"name":"Local: sum of two values equal X","url":"d:\\Modules\\Module - 13 Nested Loop Recap\\sum of two values equal X.c","tests":[{"id":1682824187123,"input":"5\n1 2 3 5 6\n5","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 13 Nested Loop Recap\\sum of two values equal X.c","group":"local","local":true}
