@@ -1,0 +1,1 @@
+{"name":"Local: count odd","url":"d:\\Modules\\Module - 14.5 Practice Day\\count odd.c","tests":[{"id":1683128394467,"input":"5\n1 5 4 10 2","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 14.5 Practice Day\\count odd.c","group":"local","local":true}

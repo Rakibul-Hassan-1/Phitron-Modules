@@ -1,0 +1,1 @@
+{"name":"Local: my abs","url":"d:\\Modules\\Module - 14.5 Practice Day\\my abs.c","tests":[{"id":1683127988620,"input":"5","output":"5"},{"id":1683127994277,"input":"-7","output":"7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 14.5 Practice Day\\my abs.c","group":"local","local":true}

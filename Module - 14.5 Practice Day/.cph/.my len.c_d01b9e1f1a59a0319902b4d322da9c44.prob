@@ -1,0 +1,1 @@
+{"name":"Local: my len","url":"d:\\Modules\\Module - 14.5 Practice Day\\my len.c","tests":[{"id":1683128158853,"input":"hello","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 14.5 Practice Day\\my len.c","group":"local","local":true}

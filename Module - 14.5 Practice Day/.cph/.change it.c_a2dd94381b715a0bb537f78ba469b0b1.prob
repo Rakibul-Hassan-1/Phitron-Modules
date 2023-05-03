@@ -1,0 +1,1 @@
+{"name":"Local: change it","url":"d:\\Modules\\Module - 14.5 Practice Day\\change it.c","tests":[{"id":1683128674414,"input":"5\n10 20 30 40 50","output":"10 20 30 40 100"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 14.5 Practice Day\\change it.c","group":"local","local":true}
