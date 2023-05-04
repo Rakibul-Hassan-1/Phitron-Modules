@@ -1,0 +1,1 @@
+{"name":"Local: No Return + Parameter","url":"d:\\Modules\\Module - 16 Assignment 03\\No Return + Parameter.c","tests":[{"id":1683219803835,"input":"hello","output":"hello"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Modules\\Module - 16 Assignment 03\\No Return + Parameter.c","group":"local","local":true}
