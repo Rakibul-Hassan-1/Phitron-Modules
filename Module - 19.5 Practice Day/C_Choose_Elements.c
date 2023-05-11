@@ -28,6 +28,11 @@ int main()
     long long int sum = 0;
     for (int i = 0; i < k; i++)
     {
+        if (arr[i] < 0)
+        {
+            break;
+        }
+
         sum += arr[i];
     }
     printf("%lld\n", sum);
