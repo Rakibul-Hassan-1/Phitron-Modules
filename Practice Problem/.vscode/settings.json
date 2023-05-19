@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*html": "html",
+        "valarray": "cpp",
+        "random": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
