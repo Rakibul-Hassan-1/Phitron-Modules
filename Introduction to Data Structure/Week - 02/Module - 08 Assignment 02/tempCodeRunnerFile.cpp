@@ -1,0 +1,2 @@
+
+        while (newNode->next != NULL)
