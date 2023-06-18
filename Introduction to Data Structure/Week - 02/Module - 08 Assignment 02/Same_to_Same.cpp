@@ -12,29 +12,6 @@ public:
     }
 };
 
-void print_node(Node *head)
-{
-    Node *temp = head;
-    while (temp != NULL)
-    {
-        cout << temp->value << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-}
-
-int node_size(Node *&head)
-{
-    int count = 0;
-    Node *temp = head;
-    while (temp != NULL)
-    {
-        count++;
-        temp = temp->next;
-    }
-    return count;
-}
-
 void insert_tail1(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
@@ -92,6 +69,7 @@ int main()
         }
         insert_tail1(head, tail, val);
     }
+    
     int val2;
     while (true)
     {

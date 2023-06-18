@@ -23,18 +23,6 @@ void print_node(Node *head)
     cout << endl;
 }
 
-int node_size(Node *&head)
-{
-    int count = 0;
-    Node *temp = head;
-    while (temp != NULL)
-    {
-        count++;
-        temp = temp->next;
-    }
-    return count;
-}
-
 void inset_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
@@ -47,6 +35,7 @@ void inset_tail(Node *&head, Node *&tail, int val)
     tail->next = newNode;
     tail = newNode;
 }
+
 void findMinMax(Node *head, int &maximum, int &minimum)
 {
     if (head == NULL)
@@ -54,6 +43,7 @@ void findMinMax(Node *head, int &maximum, int &minimum)
         maximum = minimum = 0;
         return;
     }
+
     maximum = minimum = head->value;
     Node *newNode = head->next;
     for (Node *i = newNode; newNode != NULL; i = i->next)
@@ -86,7 +76,6 @@ int main()
         inset_tail(head, tail, val);
     }
 
-    // print_node(head);
     int maximum, minimum;
     findMinMax(head, maximum, minimum);
 
