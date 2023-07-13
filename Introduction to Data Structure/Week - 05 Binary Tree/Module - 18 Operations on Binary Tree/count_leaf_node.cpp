@@ -13,7 +13,6 @@ public:
         this->left = NULL;
     }
 };
-
 Node *input()
 {
     int val;
@@ -27,7 +26,6 @@ Node *input()
     {
         root = new Node(val);
     }
-
     queue<Node *> q;
     q.push(root);
 
@@ -37,46 +35,90 @@ Node *input()
         q.pop();
 
         int l, r;
-        Node *left_sub, *right_sub;
+        Node *left_sub, *righ_sub;
         cin >> l >> r;
+
         if (l == -1)
             left_sub = NULL;
         else
             left_sub = new Node(l);
 
         if (r == -1)
-            right_sub = NULL;
+            righ_sub = NULL;
+
         else
-            right_sub = new Node(r);
+            righ_sub = new Node(r);
 
         f->left = left_sub;
-        f->right = right_sub;
+        f->right = righ_sub;
 
         if (f->left)
             q.push(f->left);
         if (f->right)
             q.push(f->right);
     }
+
     return root;
+}
+int count_leaf(Node *root)
+{
+    if (root == NULL)
+        return 0;
+
+    if (root->left == NULL && root->right == NULL)
+        return 1;
+
+    else
+    {
+        int l = count_leaf(root->left);
+        int r = count_leaf(root->right);
+        return l + r;
+    }
+}
+int count_node(Node *root)
+{
+    if (root == NULL)
+        return 0;
+
+    int l = count_node(root->left);
+    int r = count_node(root->right);
+    return l + r + 1;
 }
 
 int maxHight(Node *root)
 {
-    // base case
     if (root == NULL)
         return 0;
 
     int l = maxHight(root->left);
     int r = maxHight(root->right);
-
     return max(l, r) + 1;
+}
+
+long long leftSum(Node *root)
+{
+    // Write your code here.
+    if (root == NULL)
+        return 0;
+    long long sum = 0;
+    if (root->left != NULL)
+    {
+        sum += root->left->value + leftSum(root->left);
+    }
+
+    sum += leftSum(root->right);
+
+    return sum;
 }
 
 int main()
 {
+
     Node *root = input();
-    
-    cout << maxHight(root);
+    cout << count_leaf(root) << endl;
+    cout << count_node(root) << endl;
+    cout << maxHight(root) << endl;
+    cout << leftSum(root) << endl;
 
     return 0;
 }
