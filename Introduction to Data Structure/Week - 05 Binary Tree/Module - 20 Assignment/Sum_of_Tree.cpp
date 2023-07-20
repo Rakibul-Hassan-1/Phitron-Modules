@@ -73,15 +73,15 @@ int sumTree(Node *root)
 
     while (!q.empty())
     {
-        Node *node = q.front();
+        Node *f = q.front();
         q.pop();
 
-        sum += node->value;
+        sum += f->value;
         
-        if (node->left)
-            q.push(node->left);
-        if (node->right)
-            q.push(node->right);
+        if (f->left)
+            q.push(f->left);
+        if (f->right)
+            q.push(f->right);
     }
 
     return sum;

@@ -62,43 +62,32 @@ Node *input()
     return root;
 }
 
-void level_order(Node *root)
+bool perfect_tree(Node *root)
 {
-    vector<int> v;
+    if (root->left == NULL && root->right == NULL)
+        return true;
+        
+    if (root->left == NULL || root->right == NULL)
+        return false;
 
-    if (root == NULL)
-    {
-        return;
-    }
-    queue<Node *> q;
-    q.push(root);
+    bool l = perfect_tree(root->left);
+    bool r = perfect_tree(root->right);
 
-    while (!q.empty())
-    {
-        Node *f = q.front();
-        q.pop();
+    if (l == false || r == false)
+        return false;
 
-        v.push_back(f->value);
-       // cout << f->value << " ";
-
-        if (f->right)
-            q.push(f->right);
-
-        if (f->left)
-            q.push(f->left);
-    }
-
-    reverse(v.begin(), v.end());
-    int x;
-    for (auto x : v)
-    {
-        cout << x << " ";
-    }
+    return true;
 }
 
 int main()
 {
     Node *root = input();
-    level_order(root);
+
+    if (perfect_tree(root) == true)
+        cout << "YES" << endl;
+
+    else
+        cout << "NO" << endl;
+
     return 0;
 }

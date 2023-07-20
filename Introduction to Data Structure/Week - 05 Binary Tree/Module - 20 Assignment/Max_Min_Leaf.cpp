@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-
 using namespace std;
+
 class Node
 {
 public:
@@ -14,6 +14,7 @@ public:
         this->left = NULL;
     }
 };
+
 Node *input()
 {
     int val;
@@ -41,13 +42,11 @@ Node *input()
 
         if (l == -1)
             left_subTree = NULL;
-
         else
             left_subTree = new Node(l);
 
         if (r == -1)
             right_subTree = NULL;
-
         else
             right_subTree = new Node(r);
 
@@ -62,43 +61,31 @@ Node *input()
     return root;
 }
 
-void level_order(Node *root)
+void leafMinMax(Node *root, int &maxVal, int &minVal)
 {
-    vector<int> v;
-
     if (root == NULL)
+        return;
+
+    if (root->left == NULL && root->right == NULL)
     {
+        maxVal = max(maxVal, root->value);
+        minVal = min(minVal, root->value);
         return;
     }
-    queue<Node *> q;
-    q.push(root);
 
-    while (!q.empty())
-    {
-        Node *f = q.front();
-        q.pop();
-
-        v.push_back(f->value);
-       // cout << f->value << " ";
-
-        if (f->right)
-            q.push(f->right);
-
-        if (f->left)
-            q.push(f->left);
-    }
-
-    reverse(v.begin(), v.end());
-    int x;
-    for (auto x : v)
-    {
-        cout << x << " ";
-    }
+    leafMinMax(root->left, maxVal, minVal);
+    leafMinMax(root->right, maxVal, minVal);
 }
 
 int main()
 {
     Node *root = input();
-    level_order(root);
+    int maxVal = INT_MIN;
+    int minVal = INT_MAX;
+
+    leafMinMax(root, maxVal, minVal);
+
+    cout << maxVal << " " << minVal << endl;
+
     return 0;
 }

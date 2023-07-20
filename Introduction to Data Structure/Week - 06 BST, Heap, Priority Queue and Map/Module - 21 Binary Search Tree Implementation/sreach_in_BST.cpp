@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 class Node
 {
@@ -14,6 +13,7 @@ public:
         this->left = NULL;
     }
 };
+
 Node *input()
 {
     int val;
@@ -27,49 +27,7 @@ Node *input()
     {
         root = new Node(val);
     }
-    queue<Node *> q;
-    q.push(root);
 
-    while (!q.empty())
-    {
-        Node *parent = q.front();
-        q.pop();
-
-        int l, r;
-        cin >> l >> r;
-        Node *left_subTree, *right_subTree;
-
-        if (l == -1)
-            left_subTree = NULL;
-
-        else
-            left_subTree = new Node(l);
-
-        if (r == -1)
-            right_subTree = NULL;
-
-        else
-            right_subTree = new Node(r);
-
-        parent->left = left_subTree;
-        parent->right = right_subTree;
-
-        if (parent->left)
-            q.push(parent->left);
-        if (parent->right)
-            q.push(parent->right);
-    }
-    return root;
-}
-
-void level_order(Node *root)
-{
-    vector<int> v;
-
-    if (root == NULL)
-    {
-        return;
-    }
     queue<Node *> q;
     q.push(root);
 
@@ -78,27 +36,80 @@ void level_order(Node *root)
         Node *f = q.front();
         q.pop();
 
-        v.push_back(f->value);
-       // cout << f->value << " ";
+        int l, r;
+        Node *left_sub, *right_sub;
+        cin >> l >> r;
 
-        if (f->right)
-            q.push(f->right);
+        if (l == -1)
+            left_sub = NULL;
+        else
+            left_sub = new Node(l);
+
+        if (r == -1)
+            right_sub = NULL;
+        else
+            right_sub = new Node(r);
+
+        f->left = left_sub;
+        f->right = right_sub;
 
         if (f->left)
             q.push(f->left);
+        if (f->right)
+            q.push(f->right);
     }
+    return root;
+}
 
-    reverse(v.begin(), v.end());
-    int x;
-    for (auto x : v)
+void levelOrder(Node *root)
+{
+    if (root == NULL)
+        return;
+
+    queue<Node *> q;
+    q.push(root);
+
+    while (!q.empty())
     {
-        cout << x << " ";
+        Node *f = q.front();
+        q.pop();
+
+        cout << f->value << " ";
+
+        if (f->left)
+            q.push(f->left);
+        if (f->right)
+            q.push(f->right);
     }
+}
+
+bool isHere(Node *root, int val)
+{
+    if (root == NULL)
+        return false;
+    if (root->value == val)
+        return true;
+
+    if (val < root->value)
+        return isHere(root->left, val);
+
+    else
+        return isHere(root->right, val);
 }
 
 int main()
 {
+
     Node *root = input();
-    level_order(root);
+    
+    if (isHere(root, 60))
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
+
     return 0;
 }

@@ -1,53 +1,60 @@
-#include <iostream>
-#include <queue>
-#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
+using namespace std;
 
 class Node
-{
+{ 
 public:
     int value;
-    Node *left;
     Node *right;
-
+    Node *left;
     Node(int value)
     {
         this->value = value;
-        this->left = nullptr;
-        this->right = nullptr;
+        this->right = NULL;
+        this->left = NULL;
     }
 };
 
-Node *buildTree(std::vector<int> &nodes)
+Node *input_Tree()
 {
-    if (nodes.empty())
-        return nullptr;
+    int val;
+    cin >> val;
+    Node *root;
+    if (val == -1)
+        root = NULL;
+    else
+        root = new Node(val);
 
-    Node *root = new Node(nodes[0]);
-    std::queue<Node *> q;
-    q.push(root);
+    queue<Node *> q;
 
-    int i = 1;
-    while (!q.empty() && i < nodes.size())
+    if (root)
+        q.push(root);
+
+    while (!q.empty())
     {
-        Node *currNode = q.front();
+        Node *parent = q.front();
         q.pop();
+        int l, r;
+        Node *left_child, *right_child;
+        cin >> l >> r;
+        if (l == -1)
+            left_child = NULL;
+        else
+            left_child = new Node(l);
 
-        int leftValue = nodes[i++];
-        if (leftValue != -1)
-        {
-            currNode->left = new Node(leftValue);
-            q.push(currNode->left);
-        }
+        if (r == -1)
+            right_child = NULL;
+        else
+            right_child = new Node(r);
 
-        if (i < nodes.size())
-        {
-            int rightValue = nodes[i++];
-            if (rightValue != -1)
-            {
-                currNode->right = new Node(rightValue);
-                q.push(currNode->right);
-            }
-        }
+        parent->left = left_child;
+        parent->right = right_child;
+
+        if (parent->left)
+            q.push(parent->left);
+        if (parent->right)
+            q.push(parent->right);
     }
 
     return root;
@@ -55,60 +62,52 @@ Node *buildTree(std::vector<int> &nodes)
 
 void printLevel(Node *root, int level)
 {
-    if (root == nullptr)
+    vector<int> v;
+    if (root == NULL)
     {
-        std::cout << "Invalid";
+        cout << "Invalid" << endl;
         return;
     }
 
-    std::queue<Node *> q;
-    q.push(root);
-
-    int currentLevel = 0;
-    bool foundLevel = false;
-
+    queue<pair<Node *, int>> q;
+    q.push({root, 0});
+    int count = 0;
     while (!q.empty())
     {
-        int size = q.size();
-        for (int i = 0; i < size; i++)
+
+        pair<Node *, int> pr = q.front();
+        Node *currNode = pr.first;
+        int currLevel = pr.second;
+
+        if (currLevel == level)
         {
-            Node *node = q.front();
-            q.pop();
-
-            if (currentLevel == level)
-            {
-                std::cout << node->value << " ";
-                foundLevel = true;
-            }
-
-            if (node->left)
-                q.push(node->left);
-            if (node->right)
-                q.push(node->right);
+            v.push_back(currNode->value);
         }
 
-        currentLevel++;
-        if (foundLevel)
-            break;
+        if (currNode->left)
+            q.push({currNode->left, currLevel + 1});
+
+        if (currNode->right)
+            q.push({currNode->right, currLevel + 1});
+
+        q.pop();
+        count = currLevel++;
     }
 
-    if (!foundLevel)
-        std::cout << "Invalid";
+    if (count < level)
+        cout << "Invalid" << endl;
+        
+    for (auto x : v)
+    {
+        cout << x << " ";
+    }
 }
 
 int main()
 {
-    std::vector<int> nodes;
-    int val;
-    while (std::cin >> val)
-    {
-        nodes.push_back(val);
-    }
-
+    Node *root = input_Tree();
     int level;
-    std::cin >> level;
-
-    Node *root = buildTree(nodes);
+    cin >> level;
     printLevel(root, level);
 
     return 0;
