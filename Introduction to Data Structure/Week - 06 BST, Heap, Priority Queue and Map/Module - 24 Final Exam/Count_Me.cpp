@@ -4,32 +4,31 @@ int main()
 {
     int t;
     cin >> t;
-    while (t--)
-    {
-        cin.ignore();
+    cin.ignore();
 
-        string sentence, word;
+    for (int i = 0; i < t; i++)
+    {
+        string sentence;
         getline(cin, sentence);
         stringstream ss(sentence);
-        map<string, int> mp;
+        string word;
+        map<string, int> wordCountr;
+
+        int maxCount = 0;
+        string mostWords;
+
         while (ss >> word)
         {
-            mp[word]++;
-        }
+            wordCountr[word]++;
 
-        int maxCounter = 0;
-        string big_name;
-        
-        for (auto it = mp.begin(); it != mp.end(); it++)
-        {
-            if (it->second > maxCounter)
+            if (wordCountr[word] > maxCount)
             {
-                // cout << it->first << " " << it->second << " " << endl;
-                maxCounter = it->second;
-                big_name = it->first;
+                maxCount = wordCountr[word];
+                mostWords = word;
             }
         }
-        cout << big_name << " " << maxCounter << endl;
+
+        cout << mostWords << " " << maxCount << endl;
     }
 
     return 0;
