@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     long long n;
@@ -16,21 +17,32 @@ int main()
     int l = 0;
     int r = n - 1;
     bool flag = false;
-    int index = 0;
 
     while (l <= r) // O(logN)
     {
         int mid_index = (l + r) / 2;
         if (arr[mid_index] == x)
         {
-            flag = true;
-            // index += mid_index;
-            break;
+            if (mid_index > 0 && arr[mid_index - 1] == x)
+            {
+                flag = true;
+                break;
+            }
+            if (mid_index < n - 1 && arr[mid_index + 1] == x)
+            {
+                flag = true;
+                break;
+            }
+            
+            cout << "NO\n";
+            return 0;
         }
+
         if (x > arr[mid_index])
         {
             l = mid_index + 1;
         }
+
         else
         {
             r = mid_index - 1;
@@ -39,11 +51,12 @@ int main()
 
     if (flag == true)
     {
-        cout << "Found" << endl;
+        cout << "YES\n";
     }
+
     else
     {
-        cout << "Not Found";
+        cout << "NO\n";
     }
 
     return 0;

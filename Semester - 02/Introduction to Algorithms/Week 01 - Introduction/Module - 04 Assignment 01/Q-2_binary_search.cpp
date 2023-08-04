@@ -24,7 +24,7 @@ int main()
         if (arr[mid_index] == x)
         {
             flag = true;
-            // index += mid_index;
+            index += mid_index;
             break;
         }
         if (x > arr[mid_index])
@@ -39,7 +39,7 @@ int main()
 
     if (flag == true)
     {
-        cout << "Found" << endl;
+        cout << index << endl;
     }
     else
     {
