@@ -1,18 +1,67 @@
+// #include <bits/stdc++.h>
+// using namespace std;
+// const int N = 1e5 + 5;
+// vector<int> adj[N];
+// bool visited[N];
+
+// void DFS(int u)
+// {
+//     visited[u] = true;
+//     for (int v : adj[u])
+//     {
+//         if (visited[v])
+//             continue;
+
+//         DFS(v);
+//     }
+// }
+
+// int main()
+// {
+//     int n, m;
+//     cin >> n >> m;
+
+//     for (int i = 0; i < m; i++)
+//     {
+//         int u, v;
+//         cin >> u >> v;
+//         adj[u].push_back(v);
+//         adj[v].push_back(u);
+//     }
+//     vector<int> leaders;
+
+//     for (int i = 1; i <= n; i++)
+//     {
+//         if (visited[i])
+//             continue;
+//         leaders.push_back(i);
+//         DFS(i);
+//     }
+//     cout << leaders.size() - 1 << endl;
+
+//     for (int i = 0; i < leaders.size() - 1; i++)
+//     {
+//         cout << leaders[i] << " " << leaders[i + 1] << endl;
+//     }
+
+//     return 0;
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 5;
 vector<int> adj[N];
 bool visited[N];
 
-void DFS(int u)
+void dfs(int source)
 {
-    visited[u] = true;
-    for (int v : adj[u])
+    visited[source] = true;
+    for (int child : adj[source])
     {
-        if (visited[v])
+        if (visited[child])
             continue;
 
-        DFS(v);
+        dfs(child);
     }
 }
 
@@ -20,7 +69,6 @@ int main()
 {
     int n, m;
     cin >> n >> m;
-
     for (int i = 0; i < m; i++)
     {
         int u, v;
@@ -28,21 +76,21 @@ int main()
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-    vector<int> leaders;
 
+    vector<int> head;
     for (int i = 1; i <= n; i++)
     {
         if (visited[i])
             continue;
-        leaders.push_back(i);
-        DFS(i);
-    }
-    cout << leaders.size() - 1 << endl;
 
-    for (int i = 0; i < leaders.size() - 1; i++)
+        head.push_back(i);
+        dfs(i);
+    }
+
+    cout << head.size() - 1 << endl;
+
+    for (int i = 0; i < head.size() - 1; i++)
     {
-        cout << leaders[i] << " " << leaders[i + 1] << endl;
+        cout << head[i] << " " << head[i + 1] << endl;
     }
-
-    return 0;
 }
