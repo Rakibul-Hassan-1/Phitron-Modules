@@ -8,6 +8,8 @@ int d[N];
 int n, m;
 bool flag = false;
 
+
+
 void bellman_ford(int s)
 {
     for (int i = 1; i <= n; i++)
@@ -35,6 +37,7 @@ void bellman_ford(int s)
         }
     }
 }
+
 
 int main()
 {
