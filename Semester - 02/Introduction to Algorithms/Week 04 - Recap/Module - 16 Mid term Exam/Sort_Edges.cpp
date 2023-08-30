@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
+#define pii pair<int, int>
 using namespace std;
-typedef pair<int, int> pii;
+// typedef pair<int, int> pii;
 int main()
 {
 
@@ -16,7 +17,10 @@ int main()
   }
   while (!pq.empty())
   {
-    cout << pq.top().first << " " << pq.top().second << endl;
+    int first_value = pq.top().first;
+    int second_value = pq.top().second;
+
+    cout << first_value << " " << second_value << endl;
     pq.pop();
   }
 
