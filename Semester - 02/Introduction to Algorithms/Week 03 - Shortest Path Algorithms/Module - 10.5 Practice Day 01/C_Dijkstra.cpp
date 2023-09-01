@@ -31,7 +31,7 @@ void Dijkstra(int src)
         if (visited[selectedNode] == 1)
             continue;
 
-        visited[selectedNode] = 1;
+        visited[selectedNode] = true;
 
         for (auto child : adj[selectedNode])
         {
