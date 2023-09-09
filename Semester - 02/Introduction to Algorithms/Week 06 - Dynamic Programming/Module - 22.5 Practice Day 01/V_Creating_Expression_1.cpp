@@ -1,33 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-bool knapsack(long long idx, long long curr_sum, long long arr[], long long x, long long n)
+int size;
+long long n, x;
+int arr[21];
+bool knapsack(long long sum, int i)
 {
     // Base case
-    if (idx == n)
-        return curr_sum == x;
+    if (i == n)
+        return sum == x;
 
-    if (knapsack(idx + 1, curr_sum + arr[idx], arr, x, n))
-        return true;
-
-    if (knapsack(idx + 1, curr_sum - arr[idx], arr, x, n))
-        return true;
-
-    return false;
+    bool op1 = knapsack(sum - arr[i], i + 1);
+    bool op2 = knapsack(sum + arr[i], i + 1);
+    return op1 || op2;
 }
 
 int main()
 {
-    long long n, x;
-    cin >> n >> x;
 
-    long long arr[n];
+    cin >> n >> x;
     for (long long i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
 
-    if (knapsack(0, 0, arr, x, n))
+    if (knapsack(arr[0], 1))
     {
         cout << "YES" << endl;
     }
