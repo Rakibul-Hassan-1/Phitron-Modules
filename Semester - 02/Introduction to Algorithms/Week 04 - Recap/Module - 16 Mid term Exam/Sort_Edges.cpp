@@ -4,7 +4,6 @@ using namespace std;
 // typedef pair<int, int> pii;
 int main()
 {
-
   priority_queue<pii, vector<pii>, greater<pii>> pq;
 
   int t;
@@ -23,6 +22,7 @@ int main()
     cout << first_value << " " << second_value << endl;
     pq.pop();
   }
+  
 
   return 0;
 }

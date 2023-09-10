@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef pair<int, int> pi;
-const int dp[] = {-2, -1, 1, 2, 2, 1, -1, -2};
-const int dq[] = {1, 2, 2, 1, -1, -2, -2, -1};
 vector<pi> path = {{-2, 1}, {-1, 2}, {1, 2}, {2, 1}, {2, -1}, {1, -2}, {-1, -2}, {-2, -1}};
 
 int bfs(int u, int v, int si, int sj, int di, int dj)
