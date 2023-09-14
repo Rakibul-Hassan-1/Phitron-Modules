@@ -46,15 +46,6 @@ int main()
         }
     }
 
-    // if (coin_change(n, s, v))
-    // {
-    //     cout << "YES" << endl;
-    // }
-    // else
-    // {
-    //     cout << "NO" << endl;
-    // }
-
     cout << coin_change(n, s, v);
 
     return 0;
