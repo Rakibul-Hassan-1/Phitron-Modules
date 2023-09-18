@@ -12,8 +12,10 @@ bool coin_change(int n, int target_value, int v[])
             return false;
     }
 
+    // memoization procedure
     if (dp[n][target_value] != -1)
         return dp[n][target_value];
+
 
     bool choice1 = false, choice2 = false;
 

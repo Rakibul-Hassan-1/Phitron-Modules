@@ -29,7 +29,7 @@ void bellman_ford(int s)
                 long long int v = vpair.first;
                 long long int w = vpair.second;
                 // visited[v] = true;
-                if (d[u] != INF && d[v] > d[u] + w )
+                if (d[u] != INF && d[v] > d[u] + w)
                 {
                     d[v] = d[u] + w;
                     flag = true;
