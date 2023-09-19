@@ -16,7 +16,6 @@ bool coin_change(int n, int target_value, int v[])
     if (dp[n][target_value] != -1)
         return dp[n][target_value];
 
-
     bool choice1 = false, choice2 = false;
 
     if (target_value >= v[n - 1])
@@ -26,9 +25,7 @@ bool coin_change(int n, int target_value, int v[])
 
     choice2 = coin_change(n - 1, target_value, v);
 
-    dp[n][target_value] = choice1 || choice2;
-
-    return dp[n][target_value];
+    return dp[n][target_value] = choice1 || choice2;
 }
 
 int main()
