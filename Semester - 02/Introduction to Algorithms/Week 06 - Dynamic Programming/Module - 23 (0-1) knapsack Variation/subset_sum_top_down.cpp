@@ -101,10 +101,7 @@ int main()
     int sum;
     cin >> sum;
 
-    if (subset_sum(arr, n, sum))
-        cout << "YES" << endl;
-    else
-        cout << "NO" << endl;
+    cout << subset_sum(arr, n, sum) << endl;
 
     return 0;
 }
