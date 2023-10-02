@@ -43,7 +43,7 @@ void prims_algo(int s)
         int w = parent.w;
         if (visited[b])
             continue;
-            
+
         visited[b] = true;
         edge_list.push_back(parent);
         for (int i = 0; i < v[b].size(); i++)
