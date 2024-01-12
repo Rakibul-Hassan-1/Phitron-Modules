@@ -22,9 +22,9 @@
 # everything = a_lot(10,5)
 # print(everything)
 
-def famousName(first, second, **additional):
+def famousName(first, second, **kwargs):
     name = f'{first} {second}'
-    for key, value in additional.items():
+    for key, value in kwargs.items():
         print(key, value)
     return name
 name = famousName(first='Rakibul', second='Hassan', thrid='sohan')
