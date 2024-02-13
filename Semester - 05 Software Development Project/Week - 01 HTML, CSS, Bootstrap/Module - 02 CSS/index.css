@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  font-family: roboto;
+}
+h1 {
+  /* color: ; */
+  font-family: roboto;
+  color: white;
+  font-style: italic;
+  background: linear-gradient(to left, red, green);
+}
+
+.box {
+  border: 5px solid black;
+  height: 200px;
+  width: 200px;
+  /* padding: 50px; */
+  padding: 100px;
+  color: white;
+  background-color: orange;
+  transition: 0.5s;
+  width: 50%;
+  margin: auto;
+  margin-left: 100px;
+}
+
+.box:hover {
+  border: 5px solid black;
+  box-shadow: 0px 0px 50px red;
+  height: 200px;
+  width: 200px;
+  /* padding: 50px; */
+  padding: 100px;
+  color: white;
+  background-color: orange;
+  width: 50%;
+  margin: auto;
+  margin-left: 100px;
+}
+
+.test {
+  border: 5px solid black;
+  color: red;
+  background: green;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.first {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: red;
+  /* display: inline; */
+}
+
+.second {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: green;
+  /* display: inline; */
+}
+
+.third {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: blue;
+  /* display: inline; */
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
