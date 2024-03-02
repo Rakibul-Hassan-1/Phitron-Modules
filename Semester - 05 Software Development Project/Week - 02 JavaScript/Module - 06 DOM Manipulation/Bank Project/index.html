@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bank Managment Project</title>
+  </head>
+  <body>
+    <!-- Depostie Withdraw Total Balance massage -->
+    <div class="contaier">
+      <div class="first-child"><h2>Deposite Amount</h2></div>
+      <div class="second-child"><h2>Withdraw Amount</h2></div>
+      <div class="thrid-child">
+        <h2>Total Amount</h2>
+      </div>
+    </div>
+
+    <div class="container-parent">
+      <div class="deposite amount-box" id="deposite-amount">00</div>
+      <div class="withdraw amount-box" id="withdraw-amount">00</div>
+      <div class="total amount-box" id="total-amount">00</div>
+    </div>
+
+    <div class="diposite-withdraw-container">
+      <div class="diposite-box input-box">
+        <input type="number" name="" id="deposite-input" />
+        <br />
+        <button onclick="handleDiposite()" class="btn diposite-btn">
+          Deposite
+        </button>
+      </div>
+      <div class="withdraw-box input-box">
+        <input type="number" name="" id="withdraw-input" />
+        <br />
+        <button onclick="handleWithdraw()" class="btn withdraw-btn">
+          Withdraw
+        </button>
+      </div>
+    </div>
+    <!-- this is script file  -->
+    <script src="project.js"></script>
+  </body>
+</html>

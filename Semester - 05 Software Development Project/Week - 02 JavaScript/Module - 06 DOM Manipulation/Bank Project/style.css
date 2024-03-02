@@ -1,0 +1,75 @@
+.contaier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 130px;
+
+}
+
+.container-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.amount-box {
+  padding: 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px gray;
+}
+.deposite {
+  background-color: rgb(89, 122, 255);
+  color: white;
+}
+
+.withdraw {
+  background-color: rgb(4, 39, 179);
+  color: white;
+}
+.total {
+  background-color: rgb(211, 9, 9);
+  color: white;
+}
+
+.diposite-withdraw-container {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+}
+
+.input-box {
+  border: 1px solid gray;
+  padding: 30px;
+}
+
+.btn {
+  padding: 15px 30px;
+  margin-top: 10px;
+  border: 0px solid gray;
+}
+
+input {
+  padding: 10px 20px;
+}
+
+.diposite-btn {
+  background-color: rgb(89, 122, 255);
+  color: white;
+  font-weight: bold;
+}
+
+.withdraw-btn {
+  background-color: rgb(4, 39, 179);
+  color: white;
+  font-weight: bold;
+}
