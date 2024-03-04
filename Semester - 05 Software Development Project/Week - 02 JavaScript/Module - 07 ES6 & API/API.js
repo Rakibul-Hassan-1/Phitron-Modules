@@ -1,4 +1,4 @@
-fetch("https://fakestoreapi.com/products/1")
+fetch("https://openapi.programming-hero.com/api/videos/categories")
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
