@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Data table are below</h1>
+    {% if data %}
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Roll</th>
+          <th scope="col">Student Name</th>
+          <th scope="col">Father's Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for st in data %}
+        <tr>
+          <td>{{st.roll}}</td>
+          <td>{{st.name}}</td>
+          <td>{{st.father_name}}</td>
+          <td>{{st.address}}</td>
+          <td>
+            <a href="{% url 'delete_data' st.roll %}" class="btn btn-danger"
+              >Delete</a
+            >
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+    {% else %}
+    <h3>No data available to show</h3>
+    {% endif%}
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
