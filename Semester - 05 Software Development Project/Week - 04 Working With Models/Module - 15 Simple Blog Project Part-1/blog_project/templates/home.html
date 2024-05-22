@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="d-flex justify-content-center flex-wrap px-5 pt-5">
+  {% for post in data %}
+  <div class="col-sm-3">
+    <div class="card mx-2">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.content}}</p>
+        <p>Author: <button class="btn btn-sm btn-success" disabled>{{post.author.name}}</button></p>
+           </p>
+        <a href="#" class="btn btn-primary">Edit</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}
