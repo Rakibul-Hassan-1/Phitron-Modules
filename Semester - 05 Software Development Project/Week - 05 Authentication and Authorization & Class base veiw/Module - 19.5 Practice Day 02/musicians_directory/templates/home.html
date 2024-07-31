@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+{% block title%} Table {% endblock title%}
+
+
+{% block content%}
+
+<div class="w-75 m-auto">
+
+    <h3 class="text-center mt-3 text-primary fst-italic fs-3">All Music Information</h3>
+
+<table class="table mt-5 ">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Musician Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Album Rating</th>
+        <th scope="col">Instrument Type</th>
+        <th scope="col">Album Name</th>
+        <th scope="col">Release Date </th>
+       
+      </tr>
+    </thead>
+    <tbody>
+       {% for album in data%}
+       <tr>
+       
+        <td>{{album.id}}</td>
+        <td>{{album.musician.first_name}} {{album.musician.last_name}}</td>
+        <td>{{album.musician.email}}</td>
+        <td>{{album.rating}}</td>
+        <td>{{album.musician.instrument_type}}</td>
+        <td>{{album.album_name}}</td>
+        <td>{{album.release_date}}</td>
+       
+       
+      </tr>
+
+</div>
+
+
+
+       {% endfor%}
+         
+     
+    </tbody>
+  </table>
+
+
+
+{% endblock %}

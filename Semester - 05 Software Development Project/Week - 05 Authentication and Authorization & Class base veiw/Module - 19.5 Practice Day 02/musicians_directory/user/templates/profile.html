@@ -1,0 +1,81 @@
+{% extends 'base.html'%}
+
+{% block title%} Table {% endblock title%}
+
+
+{% block content%}
+
+<div class="w-75 m-auto ">
+ 
+    <h3 class="text-center mt-3 text-primary fst-italic fs-3">User Information</h3>
+    <h4><strong>Username:</strong>{{user_data.username}}</h4>
+    <h4><strong>Full Name:</strong>{{user_data.first_name}} {{user_data.last_name}}</h4> 
+    <h4><strong>Email:</strong>{{user_data.email}} </h4> 
+    <a href="{% url 'edit_profile'%}" class="btn btn-warning mt-2">Edit profile</a>
+    <a href="{% url 'edit_pass'%}" class="btn btn-danger mt-2">Edit password</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="w-75 m-auto">
+
+    <h3 class="text-center mt-3 text-primary fst-italic fs-3">All Music Information</h3>
+
+<table class="table mt-5 ">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Musician Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Album Rating</th>
+        <th scope="col">Instrument Type</th>
+        <th scope="col">Album Name</th>
+        <th scope="col">Release Date </th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+       {% for album in data%}
+       <tr>
+       
+        <td>{{album.id}}</td>
+        <td>
+          <a href="{% url 'edit_musician' album.musician.id %}" class="text-decoration-none">{{album.musician.first_name}} {{album.musician.last_name}}</a>
+        </td>
+        <td>{{album.musician.email}}</td>
+        <td>{{album.rating}}</td>
+        <td>{{album.musician.instrument_type}}</td>
+        <td>{{album.album_name}}</td>
+        <td>{{album.release_date}}</td>
+        <td>
+            <a href="{% url 'edit_album' album.id%}" class="btn btn-danger" >Edit</a>
+            <a href="{% url 'delete_album' album.id%}" class="btn btn-warning mt-2">Delete</a>
+            <a href="{%url 'delete_musician' album.musician.id %}" class="btn btn-info">Delete Musicain </a>
+        </td>
+       
+      </tr>
+
+</div>
+
+
+
+       {% endfor%}
+         
+     
+    </tbody>
+  </table>
+
+
+
+{% endblock %}
