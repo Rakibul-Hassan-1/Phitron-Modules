@@ -37,4 +37,4 @@ def edit_post(request, id):
 def delete_post(request, id):
     post = models.Post.objects.get(pk=id) 
     post.delete()
-    return redirect('homepage')
+    return redirect('homepageb')
